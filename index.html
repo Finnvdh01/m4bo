@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CarVibe Audio</title>
+    <link rel="icon" href="img/a9deb839-a5b5-4d50-88fc-c61b6a8eadad.png" type="image/png" />
+    <meta name="description" content="CarVibe Audio - De beste audio-installaties voor jouw auto." />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://kit.fontawesome.com/df4f30d37f.js" crossorigin="anonymous"></script>
+    <script src="main.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+      <div><strong><img class="img-logo" src="img/a9deb839-a5b5-4d50-88fc-c61b6a8eadad.png" alt=""></strong></div>
+      <div>
+        <button class="darkmode" onclick="Dark()">DarkMode</button>
+        <a href="#">Home</a>
+        <a href="products.html">Producten</a>
+        <a href="#">Installatie</a>
+        <a href="#">Over ons</a>
+        <a href="#">Contact</a>
+        <a href=""><i class="fa-solid fa-cart-shopping"></i>
+        <span class="navbar__cart-count" id="ItemCounter">0</span>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1 class="moto">Voel de Bass. Geef Gas.</h1>
+    <div class="hero-buttons">
+      <a href="products.html"><button class="btn-primary">Bekijk Producten</button></a>
+      <button class="btn-secondary">Neem Contact Op</button>
+        
+     
+    </div>
+  </section>
+ 
+
+  <section class="Merken">
+    <h2 class="merk--text">Onze Merken</h2>
+    <div class="Merken1">
+      <div class="card--merken"><img class="merkimg" src="img/2707164139-Pioneer.png" alt="Merk 1"></div>
+      <div class="card--merken"><img class="merkimg" src="img/3110127431-Hertz.png" alt="Merk 2"></div>
+      <div class="card--merken"><img class="merkimg" src="img/1448212548-Edge.png" alt="Merk 3"></div>
+      <div class="card--merken"><img class="merkimg" src="img/9582328020-VIBE.png" alt="Merk 4"></div>
+    </div>
+
+    <section class="aanbiedingen">
+      <div class="aanbiedingen-grid">
+        <div class="card--aanbieding">
+          <h3>20% Korting op alle Subwoofers!</h3>
+          <p>Beperkte tijd aanbieding. Mis het niet!</p>
+          <a href="products.html"><button class="btn-aanbieding"> Aanbiedingen</button></a>
+      </div>
+
+  <section class="section">
+    <h2>Populaire Categorieën</h2>
+    <div class="grid">
+      <div class="card"><h2>Speakers</h2><img class="speakerimg" src="img/6094031970-luidsprekers.jpg" alt="speakers"></div>
+      <div class="card"><h2>Subwoofers</h2><img class="speakerimg" src="img/1184423054-SLICKMIT10-V3hero.png" alt="Subwoofers"></div>
+      <div class="card"><h2>Versterkers</h2><img class="speakerimg" src="img/6757249120-POWERBOX-1200.1-FRONT-45_.jpg" alt="versterkers"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Uitgelichte Producten</h2>
+    <div class="grid">
+
+      <div class="card">
+        <img class="productimg" src="img/2802387793-Ontwerpzondertitel1.png" alt="">
+        <h3>VIBE SLICKMIT12T-V3 Subwoofer Pakket</h3>
+        <ul class="product-details">
+          <li>Inclusief Bas Regelunit</li>
+          <li>Inclusief kabelset</li>
+          <li>Dubbele 12" Subwoofer</li>
+          <li>1200W RMS Versterker</li>
+        </ul>
+        <p>Prijs: € 812,97</p>
+        <button class="card__button" onclick="counter()">Add to Cart</button>
+          <button class="del" onclick="verwijder()">
+                        <p class="delete-text">Delete</p>
+                    </button>
+      </div>
+
+      <div class="card">
+        <img class="productimg" src="img/1165790790-BA6MW-V41.png" alt="">
+        <h3>VIBE SLICKMIT12T-V3 Subwoofer Pakket</h3>
+        <ul class="product-details">
+          <li>Maat: 16.5 cm</li>
+          <li>Per set / 2 stuks</li>
+          <li>Impedantie: 4 Ω</li>
+          <li>2 x 140 Watt RMS</li>
+          <li>Woofers</li>
+        </ul>
+        <p>Prijs:  € 129,99</p>
+         <button class="card__button" onclick="counter()">Add to Cart</button>
+           <button class="del" onclick="verwijder()">
+                        <p class="delete-text">Delete</p>
+                    </button>
+      </div>
+
+      <div class="card">
+       <img class="productimg" src="img/2497511236-bg_edbx6c-e1.jpg" alt="">
+        <h3>EDGE EDBX6C-E1</h3>
+        <ul class="product-details">
+          <li>Maat: 16.5 cm</li>
+          <li>Per set / 2 stuks</li>
+          <li>2-weg Componenten Set</li>
+          <li>2 x 90 Watt RMS</li>
+          <li>Impedantie: 4 Ω</li>
+        </ul>
+        <p>Prijs: € 79,99</p>
+         <button class="card__button" onclick="counter()">Add to Cart</button>
+           <button class="del" onclick="verwijder()">
+                        <p class="delete-text">Delete</p>
+                    </button>
+      </div>
+
+      <div class="card">
+        <img class="productimg" src="img/1339934757-1520419105-sph-da97dabantenne.png" alt="">
+        <h3>Pioneer SPH-DA97DAB-UNI</h3>
+        <ul class="product-details">
+          <li>Android Auto & Apple Carplay</li>
+          <li>9" Zwevend Touchscreen</li>
+          <li>Split Screen functie</li>
+          <li>1-DIN Inbouwkit</li>
+          <li>Direct Key & PxLink App</li>
+        </ul>
+        <p>Prijs: € 799</p>
+        <button class="card__button" onclick="counter()">Add to Cart</button>
+          <button class="del" onclick="verwijder()">
+                        <p class="delete-text">Delete</p>
+                    </button>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section install">
+    <div>
+      <img class="installatieimg" src="img/1980543227-_DSC1501-Enhanced-NR.jpg" alt="Installatie" />
+    </div>
+    <div>
+      <h2>Waarom kiezen voor ons?</h2>
+      <ul>
+        <li>✔️ Deskundige installatie</li>
+        <li>✔️ Topkwaliteit merken</li>
+        <li>✔️ Snelle levering</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section testimonial">
+    <div>
+      <h2>Klantbeoordelingen</h2>
+      <p>⭐⭐⭐⭐⭐ "Topservice en geweldige sound!"</p>
+    </div>
+    <div>
+      <img src="img/e843d2d3ed2a5c252841d4cda3e74334.jpg" alt="Klantauto" />
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>#CarVibeCommunity</h2>
+    <div class="grid">
+      <img src="img/35c02f49ed6a0bf874d185c3304022cb.jpg" />
+      <img src="img/IMG_0528-426x320x0x0x426x320x1726515225.jpeg" />
+    </div>
+  </section>
+
+  <footer>
+    <div>
+      <p>&copy; 2025 CarVibe Audio</p>
+      <p><a href="#">Algemene voorwaarden</a> | <a href="#">Garantie</a></p>
+    </div>
+    <div>
+      <p>Volg ons: 🔗 Instagram 🔗 Facebook 🔗 YouTube</p>
+      <p>Nieuwsbrief: [E-mailveld] [Aanmelden]</p>
+    </div>
+  </footer>
+</body>
+</html>
