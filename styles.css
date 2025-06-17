@@ -7,15 +7,7 @@ body {
   font-family: "Playfair Display", serif;
 }
 
-header {
-  background-color: white;
-  color: #fff;
-  padding: 1rem 2rem;
-  height: 8vh;
-  position: fixed;
-  width: 100%;
-  position: fixed;
-}
+
 
 
 
@@ -27,25 +19,35 @@ header {
 }
 
 
-.img-logo {
-  width: 100px;
-  height: auto;
-  border-radius: 50%;
-  transition: transform 0.3s;
-  margin-top: -1rem;
-}
-
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 98%;
+  padding: 1rem;
+  background-color: #1a1a1a;
+  color: white;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
 }
 
 nav a {
-  color: black;
-  margin: 0 0.5rem;
+  color: white;
+  margin-left: 1rem;
   text-decoration: none;
+  font-weight: 500;
+}
+
+.img-logo {
+  height: 40px;
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+}
+
+.img-logo:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s;
 }
 
 .hero {
@@ -113,13 +115,23 @@ nav a {
 }
 
 footer {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 2rem;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 2rem;
-  background: url('img/ondas-sonoras-oscilan-luz-oscura_42077-13803.avif') no-repeat;
-  background-size: 100% 100%;
-  color: white;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #ccc;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
 
 .speakerimg {

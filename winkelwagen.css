@@ -1,0 +1,119 @@
+body {
+  font-family: "Playfair Display", serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+
+header {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.terug {
+  background-color: #444;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background-color 0.3s, transform 0.2s;
+  display: inline-block;
+}
+
+.terug:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+}
+
+
+#cart-container {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.cart-item {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.cart-item:hover {
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  transform: translateY(-4px);
+}
+
+.dark-mode .cart-item {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+
+.cart-item img {
+  width: 10%;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+}
+
+.cart-item h3 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.cart-item p {
+  margin: 0.3rem 0;
+  font-weight: 500;
+}
+
+
+.remove-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.remove-btn:hover {
+  background-color: #c82333;
+}
+
+
+#total-price {
+  text-align: right;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 2rem;
+  border-top: 1px solid #ddd;
+}
+
+.dark-mode #total-price {
+  border-color: #333;
+}
