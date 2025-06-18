@@ -40,10 +40,9 @@ function renderProducts(productArray) {
   const container = document.getElementById("product-grid");
   container.innerHTML = "";
 
-  productArray.forEach((product, index) => {
+  productArray.forEach(product => {
     const card = document.createElement("div");
     card.classList.add("card");
-    card.setAttribute('data-index', index);
 
     card.innerHTML = `
       <img class="productimg" src="${product.imgSrc}" alt="${product.name}" />
@@ -71,46 +70,8 @@ function renderProducts(productArray) {
       cart = cart.filter(item => item.title !== title);
       localStorage.setItem('cart', JSON.stringify(cart));
       updateCartCount();
-      
-    });
-  });
 
-  
-  document.querySelectorAll('.card').forEach(card => {
-    card.addEventListener('click', (e) => {
-     
-      if (e.target.closest('button')) return;
-
-      const index = card.getAttribute('data-index');
-      const product = productArray[index];
-
-      const modal = document.createElement('div');
-      modal.classList.add('modal');
-      modal.innerHTML = `
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <h2>${product.name}</h2>
-          <img src="${product.imgSrc}" style="max-width: 100%; margin: 10px 0;" />
-          <ul>
-            ${product.description.map(desc => `<li>${desc}</li>`).join('')}
-          </ul>
-          <p><strong>Prijs: €${product.price.toFixed(2)}</strong></p>
-        </div>
-      `;
-      document.body.appendChild(modal);
-      modal.style.display = 'block';
-
-      modal.querySelector('.close').addEventListener('click', () => {
-        modal.remove();
       });
-
-      window.addEventListener('click', function handler(event) {
-        if (event.target === modal) {
-          modal.remove();
-          window.removeEventListener('click', handler);
-        }
-      });
-    });
   });
 }
 
@@ -377,3 +338,5 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+
