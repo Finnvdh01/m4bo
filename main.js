@@ -377,3 +377,141 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+function renderProducts(productArray, containerId = "product-grid") {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  container.innerHTML = "";
+
+  productArray.forEach((product, index) => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    card.setAttribute('data-index', index);
+
+    card.innerHTML = `
+      <img class="productimg" src="${product.imgSrc}" alt="${product.name}" />
+      <h3>${product.name}</h3>
+      <ul class="product-details">
+        ${product.description.map(item => `<li>${item}</li>`).join('')}
+      </ul>
+      <p>Prijs: € ${product.price.toFixed(2)}</p>
+      <button class="card__button">Add to Cart</button>
+      <button class="del"><p class="delete-text">Delete</p></button>
+    `;
+
+    container.appendChild(card);
+  });
+
+  document.querySelectorAll(`#${containerId} .card__button`).forEach(button =>
+    button.addEventListener('click', counter)
+  );
+
+  document.querySelectorAll(`#${containerId} .del`).forEach(button => {
+    button.addEventListener('click', (event) => {
+      const card = event.target.closest('.card');
+      const title = card.querySelector('h3').innerText;
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart = cart.filter(item => item.title !== title);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartCount();
+    });
+  });
+
+  document.querySelectorAll(`#${containerId} .card`).forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('button')) return;
+
+      const index = card.getAttribute('data-index');
+      const product = productArray[index];
+
+      const modal = document.createElement('div');
+      modal.classList.add('modal');
+      modal.innerHTML = `
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>${product.name}</h2>
+          <img src="${product.imgSrc}" style="max-width: 100%; margin: 10px 0;" />
+          <ul>
+            ${product.description.map(desc => `<li>${desc}</li>`).join('')}
+          </ul>
+          <p><strong>Prijs: €${product.price.toFixed(2)}</strong></p>
+        </div>
+      `;
+      document.body.appendChild(modal);
+      modal.style.display = 'block';
+
+      modal.querySelector('.close').addEventListener('click', () => {
+        modal.remove();
+      });
+
+      window.addEventListener('click', function handler(event) {
+        if (event.target === modal) {
+          modal.remove();
+          window.removeEventListener('click', handler);
+        }
+      });
+    });
+  });
+}
+
+const featuredProducts = [
+    {
+    brand: "Pioneer",
+    type: "headunit",
+    name: "Pioneer SPH-DA97DAB-C-D7",
+    description: [
+      "9-inch multimedia-autoradio",
+      "Speciaal ontworpen voor Fiat Ducato, Peugeot Boxer en Citroën Jumper (2007-2024)",
+      "Inclusief Camper Navigatie-app met voertuigafhankelijke routering",
+      "Draadloos en bedraad Apple CarPlay en Android Auto",
+      "DAB+ radio, Bluetooth en Wi-Fi"
+    ],
+    price: 1049.00,
+    imgSrc: "img/pioneer_sph_da97dab_c_d7.png"
+  },
+  {
+    brand: "VIBE",
+    type: "speakers",
+    name: "VIBE BDPRO6M-V9",
+    description: [
+      "6.5\" Midrange Speaker",
+      "175 Watt RMS @ 4Ω",
+      "Semi-geperste papieren conus",
+      "Hoge gevoeligheid en lage bewegingsmassa"
+    ],
+    price: 89.00,
+    imgSrc: "img/vibe_bdpro6m_v9.png"
+  },
+  {
+    brand: "Hertz",
+    type: "subwoofer",
+    name: "Hertz diECi DBA 201 F",
+    description: [
+      "Compacte underseat subwoofer",
+      "220 Watt RMS",
+      "Ingebouwde 440 W D-klasse versterker",
+      "Superplat ontwerp",
+      "Dubbele passieve radiatoren"
+    ],
+    price: 349.00,
+    imgSrc: "img/hertz_dba_201_f.png"
+  },
+    {
+    brand: "Pioneer",
+    type: "subwoofer",
+    name: "Pioneer TS-WX130DA Actieve Subwoofer",
+    description: [
+      "13 cm actieve subwoofer",
+      "Max. vermogen 150 Watt",
+      "Lichtgewicht design",
+      "Ingebouwde versterker"
+    ],
+    price: 149.99,
+    imgSrc: "img/TS-WX130DA_1.png"
+  }
+];
+
+  window.addEventListener('DOMContentLoaded', () => {
+  updateCartCount();
+  renderProducts(featuredProducts, "featured-grid");
+});
